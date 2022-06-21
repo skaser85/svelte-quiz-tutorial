@@ -45,7 +45,7 @@
 {/if}
 
 {#each allAnswers as answer}
-<button on:click={() => checkQuestion(answer.correct)}>{@html answer.answer}</button>
+    <button on:click={() => checkQuestion(answer.correct)}>{@html answer.answer}</button>
 {/each}
 
 {#if isAnswered}
