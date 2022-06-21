@@ -27,6 +27,13 @@
         score = score + 1;
     }
 
+    $: if (score > 6) {
+        alert("You won!");
+        resetQuiz();
+    }
+
+    $: questionNumber = activeQuestion + 1;
+
 </script>
 
 <style>
@@ -40,7 +47,7 @@
     <button on:click={resetQuiz}>Start new Quiz</button>
 
     <h3>My Score: {score}</h3>
-    <h4>Question #{activeQuestion+1}</h4>
+    <h4>Question #{questionNumber}</h4>
 
     {#await quiz}
         Loading...
